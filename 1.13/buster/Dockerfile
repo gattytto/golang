@@ -50,7 +50,7 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 RUN go get -u google.golang.org/grpc
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
-RUN go get -d -u github.com/googleapis/googleapis
+RUN go get -d github.com/googleapis/googleapis
 RUN go install /go/src/github.com/golang/protobuf/protoc-gen-go
 
 WORKDIR $GOPATH
