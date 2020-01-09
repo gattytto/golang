@@ -51,8 +51,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 RUN go get -u google.golang.org/grpc
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
 RUN go get -u -v github.com/infobloxopen/protoc-gen-gorm
-RUN mkdir -p "$GOPATH/src/github.com/googleapis/googleapis"
-RUN git clone https://github.com/googleapis/googleapis "$GOPATH/src/github.com/googleapis/googleapis"
+RUN go get -u -v google.golang.org/genproto/...
 RUN go install "$GOPATH/src/github.com/golang/protobuf/protoc-gen-go"
 RUN chmod -R 777 "$GOPATH"
 
