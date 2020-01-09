@@ -50,8 +50,9 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 RUN go get -u google.golang.org/grpc
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
-RUN go get -u -v github.com/infobloxopen/protoc-gen-gorm
+RUN go get -d -u -v github.com/infobloxopen/protoc-gen-gorm
 RUN go get -u -v google.golang.org/genproto/...
+RUN go install "$GOPATH/src/github.com/golang/protobuf/protoc-gen-go"
 RUN go install "$GOPATH/src/github.com/golang/protobuf/protoc-gen-go"
 RUN chmod -R 777 "$GOPATH"
 
