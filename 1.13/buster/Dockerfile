@@ -53,7 +53,7 @@ RUN go get -u github.com/golang/protobuf/protoc-gen-go
 RUN go get -d -u -v github.com/infobloxopen/protoc-gen-gorm
 RUN go get -u -v google.golang.org/genproto/...
 RUN go install "$GOPATH/src/github.com/golang/protobuf/protoc-gen-go"
-RUN go install "$GOPATH/src/github.com/golang/protobuf/protoc-gen-go"
+RUN go install "$GOPATH/src/github.com/infobloxopen/protoc-gen-gorm"
 RUN chmod -R 777 "$GOPATH"
 
 WORKDIR $GOPATH
